@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ViewsComponent } from './views/views.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HoverDirective } from './hover.directive';
+import { DatePipePipe } from './date-pipe.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewsComponent,
-    HoverDirective
+    HoverDirective,
+    DatePipePipe
   ],
   imports: [
     BrowserModule,

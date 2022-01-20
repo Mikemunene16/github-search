@@ -10,12 +10,12 @@ export class HoverDirective {
 
   @HostListener('mouseover')
   onMouseOver() {
-    // this.backgroundColor = '#fff';
+    this.hover ('#86a6df');
   }
 
   @HostListener('mouseout')
   onMouseOut() {
-    // this.backgroundColor =  '#000';
+    this.hover (null);
   }
 
   private hover(color: string) {
