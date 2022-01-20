@@ -7,6 +7,8 @@ import { ViewsComponent } from './views/views.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HoverDirective } from './hover.directive';
 import { DatePipePipe } from './date-pipe.pipe';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { DatePipePipe } from './date-pipe.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
