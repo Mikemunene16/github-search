@@ -3,35 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../user';
 import { Repository } from '../repository';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubRequestService {
-  foundUser: User;
-  allRepos: Repository;
- 
-
+  baseURL: string = 'https://api.github.com';
   constructor(private http: HttpClient) {
-    this.foundUser = new User("","","","",0,0,0,"",new Date);
-    this.allRepos = new Repository("","","",new Date,0,0,"");
   }
 
-  searchUSer(searchName: string) {
-   
-    interface Responce {
-      url:string,
-      login: string;
-      html_url:string;
-      location:string
-      public_repos:number;
-      followers:number;
-      following:number;
-      avatar_url:string;
-      created_at:Date;
-    }
+  getRepos(userName: string): Observable<Repository[]> {
+       return this.http.get<Repository[]>(this.baseURL + '/users/' + userName + '/repos');
+  }
 
-    
-   
+  getUsers(userName: string): Observable<User[]> {
+    return this.http.get<User[]>(this.baseURL + '/users/' + userName);
+
   }
 }

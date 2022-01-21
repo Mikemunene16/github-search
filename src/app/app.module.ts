@@ -5,10 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewsComponent } from './views/views.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubRequestService } from './github/github-request.service';
 import { HoverDirective } from './hover.directive';
 import { DatePipePipe } from './date-pipe.pipe';
-import { NgProgressModule } from '@ngx-progressbar/core';
-import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 
 @NgModule({
@@ -22,8 +21,6 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
