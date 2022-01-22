@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GithubRequestService {
+
   baseURL: string = 'https://api.github.com';
   constructor(private http: HttpClient) {
   }

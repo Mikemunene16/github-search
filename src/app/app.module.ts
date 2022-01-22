@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GithubRequestService } from './github/github-request.service';
 import { HoverDirective } from './hover.directive';
 import { DatePipePipe } from './date-pipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,8 +22,9 @@ import { DatePipePipe } from './date-pipe.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [GithubRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
